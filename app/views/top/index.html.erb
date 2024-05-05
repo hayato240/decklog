@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <%= link_to "Sign out", "/sign_out",
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+<% else %>
+  <%= button_to "Sign in", "/auth/twitter2", method: :post,
+                data: { turbo: false } %>
+<% end %>
